@@ -4,12 +4,17 @@
   },
   "forwardPorts": [3000],
   "name": "Flutter",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {}
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "Dart-Code.dart-code",
-        "Dart-Code.flutter"
+        "Dart-Code.flutter",
+        "rust-lang.rust-analyzer"
       ]
     }
-  }
+  },
+  "postCreateCommand": "flutter doctor -v && rustup target add wasm32-unknown-unknown"
 }
